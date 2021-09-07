@@ -3,8 +3,45 @@ import Image from "next/image";
 import Script from "next/script";
 import Img from "next/image";
 import Link from "next/link";
+import React, { useState, useEffect } from "react";
+
+const useAudio = (url) => {
+  const [audio, setAudio] = useState(null);
+  const [playing, setPlaying] = useState(true);
+
+  const toggle = () => setPlaying(!playing);
+
+  useEffect(() => {
+    console.log(playing);
+    const toggleMusic = async () =>
+      playing ? await audio.play() : await audio.pause();
+
+    if (audio) {
+      toggleMusic();
+    }
+  }, [playing, audio]);
+
+  useEffect(() => {
+    if (!audio) {
+      setAudio(new Audio(url));
+    }
+    if (audio) {
+      audio.addEventListener("ended", () => setPlaying(false));
+    }
+    return () => {
+      if (audio) {
+        audio.removeEventListener("ended", () => setPlaying(false));
+        setAudio(null);
+      }
+    };
+  }, [audio, url]);
+
+  return [playing, toggle];
+};
 
 export default function Home() {
+  const [playing, toggle] = useAudio("/music/wedding.mp3");
+
   return (
     <>
       <Head>
@@ -611,6 +648,14 @@ export default function Home() {
                       </a>
                     </Link>
                   </small>
+                  <small className="block">
+                    Thanks for Music{" "}
+                    <Link href="https://youtu.be/_pR_cW4bDeE" passHref>
+                      <a target="_blank" rel="noreferrer">
+                        Ungu Feat. Andien - Saat Bahagia | VC Trinity
+                      </a>
+                    </Link>
+                  </small>
                 </p>
                 <p>
                   <ul className="fh5co-social-icons">
@@ -674,6 +719,27 @@ export default function Home() {
           <a href="#" className="js-gotop">
             <i className="icon-arrow-up"></i>
           </a>
+        </div>
+
+        {/* music button */}
+        <div
+          style={{
+            position: "fixed",
+            bottom: "20px",
+            left: "20px",
+            zIndex: 999,
+            opacity: 1,
+            visibility: "visible",
+            transition: "0.5s",
+          }}
+        >
+          <button onClick={toggle}>
+            {playing ? (
+              <i className="icon-pause"></i>
+            ) : (
+              <i className="icon-play"></i>
+            )}
+          </button>
         </div>
       </div>
     </>
