@@ -4,6 +4,8 @@ import Script from "next/script";
 import Img from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import AddToCalendarHOC from "react-add-to-calendar-hoc";
+import moment from "moment-timezone";
 
 const useAudio = (url) => {
   const [audio, setAudio] = useState(null);
@@ -42,10 +44,34 @@ const useAudio = (url) => {
 export default function Home() {
   const [playing, toggle] = useAudio("/music/wedding.mp3");
 
+  const startDatetime = moment("2021-10-10 13:00").tz("Asia/Jakarta");
+  const endDatetime = startDatetime.clone().add(4, "hours");
+  const duration = moment.duration(endDatetime.diff(startDatetime)).asHours();
+
+  const [event, setEvent] = useState({
+    title: "Acara Nikah Rianti & Afif",
+    description:
+      "Event acara resepsi nikah rianti & afif yang diselenggarakan pada tanggal 10 oktober 2021",
+    location: "Jl. Ploso IX-A no. 10, Surabaya, Jawa Timur",
+    startDatetime: startDatetime.format("YYYYMMDDTHHmmssZ"),
+    endDatetime: endDatetime.format("YYYYMMDDTHHmmssZ"),
+    duration,
+  });
+
+  const Button = ({ children, onClick }) => (
+    <a className="btn btn-default btn-sm" onClick={onClick}>
+      {children}
+    </a>
+  );
+  const Dropdown = ({ children }) => (
+    <ul className="dropdown animated-fast fadeInUpMenu">{children}</ul>
+  );
+  const AddToCalendarDropdown = AddToCalendarHOC(Button, Dropdown);
+
   return (
     <>
       <Head>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <title>Wedding &mdash; Rianti & Afif</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -154,11 +180,11 @@ export default function Home() {
                     <h1>Rianti &amp; Afif</h1>
                     <h2>Alhamdulillah, kita telah menikah</h2>
                     <div className="simply-countdown simply-countdown-one"></div>
-                    <p>
-                      <a href="#" className="btn btn-default btn-sm">
-                        Save the date
-                      </a>
-                    </p>
+                    <AddToCalendarDropdown
+                      className="has-dropdown"
+                      event={event}
+                      buttonText="Save the date"
+                    />
                   </div>
                 </div>
               </div>
@@ -171,8 +197,10 @@ export default function Home() {
           <div className="container">
             <div className="row">
               <div className="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-                <h2>{`Assalamu'alaikum`}</h2>
-                <h3>بِسْــــــــــــــــــمِ اللهِ الرَّحْمَنِ الرَّحِيْمِ</h3>
+                <h2
+                  style={{ fontSize: "3.5rem!important" }}
+                >{`Assalamu'alaikum`}</h2>
+                <h3>بِسْمِ اللّهِ الرَّحْمَنِ الرَّحِيْمِ</h3>
                 <h3>Salam sejahtera bagi kita semua</h3>
                 <h3>10 Oktober 2021</h3>
                 <p>Acara resepsi pernikahan kami</p>
@@ -657,58 +685,56 @@ export default function Home() {
                     </Link>
                   </small>
                 </p>
-                <p>
-                  <ul className="fh5co-social-icons">
-                    <li>
-                      <Link href="https://twitter.com/bungambohlah" passHref>
-                        <a target="_blank" rel="noreferrer">
-                          <i className="icon-twitter"></i>
-                        </a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="https://instagr.am/afif.abdillah.j" passHref>
-                        <a target="_blank" rel="noreferrer">
-                          <i className="icon-instagram"></i>
-                        </a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="https://fb.me/rudrafentje.samasamagila"
-                        passHref
-                      >
-                        <a target="_blank" rel="noreferrer">
-                          <i className="icon-facebook"></i>
-                        </a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="https://linkedin.com/in/afifjusuf/" passHref>
-                        <a target="_blank" rel="noreferrer">
-                          <i className="icon-linkedin"></i>
-                        </a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="https://youtube.com/channel/UCgXeikUYtBItdbE1_Lw9y1w"
-                        passHref
-                      >
-                        <a target="_blank" rel="noreferrer">
-                          <i className="icon-youtube"></i>
-                        </a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="https://afifjusuf.id" passHref>
-                        <a>
-                          <i className="icon-globe2"></i>
-                        </a>
-                      </Link>
-                    </li>
-                  </ul>
-                </p>
+                <ul className="fh5co-social-icons">
+                  <li>
+                    <Link href="https://twitter.com/bungambohlah" passHref>
+                      <a target="_blank" rel="noreferrer">
+                        <i className="icon-twitter"></i>
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="https://instagr.am/afif.abdillah.j" passHref>
+                      <a target="_blank" rel="noreferrer">
+                        <i className="icon-instagram"></i>
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="https://fb.me/rudrafentje.samasamagila"
+                      passHref
+                    >
+                      <a target="_blank" rel="noreferrer">
+                        <i className="icon-facebook"></i>
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="https://linkedin.com/in/afifjusuf/" passHref>
+                      <a target="_blank" rel="noreferrer">
+                        <i className="icon-linkedin"></i>
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="https://youtube.com/channel/UCgXeikUYtBItdbE1_Lw9y1w"
+                      passHref
+                    >
+                      <a target="_blank" rel="noreferrer">
+                        <i className="icon-youtube"></i>
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="https://afifjusuf.id" passHref>
+                      <a>
+                        <i className="icon-globe2"></i>
+                      </a>
+                    </Link>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -722,24 +748,14 @@ export default function Home() {
         </div>
 
         {/* music button */}
-        <div
-          style={{
-            position: "fixed",
-            bottom: "20px",
-            left: "20px",
-            zIndex: 999,
-            opacity: 1,
-            visibility: "visible",
-            transition: "0.5s",
-          }}
-        >
-          <button onClick={toggle}>
+        <div className="musicbtn">
+          <a onClick={toggle}>
             {playing ? (
               <i className="icon-pause"></i>
             ) : (
               <i className="icon-play"></i>
             )}
-          </button>
+          </a>
         </div>
       </div>
     </>
