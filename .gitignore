@@ -32,3 +32,9 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# env file
+.env
+
+# config for api
+/config/api_config.json

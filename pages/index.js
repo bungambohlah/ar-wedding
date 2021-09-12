@@ -41,8 +41,25 @@ const useAudio = (url) => {
   return [playing, toggle];
 };
 
+async function submitForm(e, params) {
+  e.preventDefault();
+
+  if (params && params.constructor === Object) {
+    const res = await fetch(`/api/attend`, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(params),
+    });
+
+    return await res.json();
+  }
+}
+
 export default function Home() {
   const [playing, toggle] = useAudio("/music/wedding.mp3");
+  const [name, setName] = useState("");
 
   const startDatetime = moment("2021-10-10 13:00").tz("Asia/Jakarta");
   const endDatetime = startDatetime.clone().add(4, "hours");
@@ -649,7 +666,13 @@ export default function Home() {
             </div>
             <div className="row animate-box">
               <div className="col-md-10 col-md-offset-1">
-                <form className="form-inline">
+                <form
+                  name="attendForm"
+                  action="/api/attend"
+                  method="post"
+                  onSubmit={async (e) => await submitForm(e, { name })}
+                  className="form-inline"
+                >
                   <div className="col-md-6 col-sm-6">
                     <div className="form-group">
                       <label htmlFor="name" className="sr-only">
@@ -660,6 +683,9 @@ export default function Home() {
                         className="form-control"
                         id="name"
                         placeholder="Nama kamu siapa?"
+                        name="name"
+                        value={name}
+                        onChange={(e) => setName(e.currentTarget.value)}
                       />
                     </div>
                   </div>
