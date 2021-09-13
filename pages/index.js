@@ -132,6 +132,11 @@ export default function Home() {
         <meta name="twitter:url" content="https://afifjusuf.id/wedding" />
         <meta name="twitter:card" content="" />
       </Head>
+      {/* modernizr */}
+      <Script
+        strategy="beforeInteractive"
+        src="/js/modernizr-2.6.2.min.js"
+      ></Script>
       {/* // jQuery */}
       <Script strategy="beforeInteractive" src="/js/jquery.min.js"></Script>
       {/* // jQuery Easing */}
@@ -244,17 +249,17 @@ export default function Home() {
             </div>
             <div className="couple-wrap animate-box">
               <div className="couple-half">
-                <div className="groom">
+                <div className="bride">
                   <Img
-                    src="/images/groom.jpg"
-                    alt="groom"
+                    src="/images/bride.jpg"
+                    alt="bride"
                     className="img-responsive"
-                    width="40"
-                    height="40"
+                    width="300"
+                    height="300"
                     // layout="fill"
                   />
                 </div>
-                <div className="desc-groom">
+                <div className="desc-bride">
                   <h3>Rianti Dwi Lestari</h3>
                   <p>
                     Far far away, behind the word mountains, far from the
@@ -267,17 +272,17 @@ export default function Home() {
                 <i className="icon-heart2"></i>
               </p>
               <div className="couple-half">
-                <div className="bride">
+                <div className="groom">
                   <Img
-                    src="/images/bride.jpg"
+                    src="/images/groom.jpg"
                     alt="groom"
                     className="img-responsive"
-                    width="40"
-                    height="40"
+                    width="300"
+                    height="300"
                     // layout="fill"
                   />
                 </div>
-                <div className="desc-bride">
+                <div className="desc-groom">
                   <h3>Afif Abdillah Jusuf</h3>
                   <p>
                     Far far away, behind the word mountains, far from the
@@ -297,7 +302,7 @@ export default function Home() {
           style={{ backgroundImage: "url(/images/img_bg_3.jpg)" }}
         >
           <div className="overlay"></div>
-          <div className="container">
+          <div className="container-fluid">
             <div className="row">
               <div className="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
                 <span>Daftar Acara Kami</span>
@@ -438,7 +443,7 @@ export default function Home() {
                   <li className="timeline-inverted animate-box">
                     <div
                       className="timeline-badge"
-                      style={{ backgroundImage: "url(/images/couple-3.jpg)" }}
+                      style={{ backgroundImage: "url(/images/couple-4.jpg)" }}
                     ></div>
                     <div className="timeline-panel">
                       <div className="timeline-heading">
