@@ -573,7 +573,7 @@ figure {
 
 #fh5co-counter .event-wrap .event-col,
 #fh5co-event .event-wrap .event-col {
-  width: 50%;
+  /* width: 50%; */
   float: left;
   margin-bottom: 30px;
 }

@@ -262,9 +262,10 @@ export default function Home() {
                 <div className="desc-bride">
                   <h3>Rianti Dwi Lestari</h3>
                   <p>
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts. Separated they live in Bookmarksgrove
+                    Assalamu'alaikum, perkenalkan nama saya Rianti, panggil saja
+                    Ria. Sah istri dari Afif Abdillah Jusuf, saya meminta doa
+                    dan restu semoga pernikahan saya menjadi cinta yang abadi di
+                    dunia maupun di akhirat, aamiin.
                   </p>
                 </div>
               </div>
@@ -285,9 +286,11 @@ export default function Home() {
                 <div className="desc-groom">
                   <h3>Afif Abdillah Jusuf</h3>
                   <p>
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts. Separated they live in Bookmarksgrove
+                    Perkenalkan saya Afif, panggil saja Apep, sah suami dari
+                    Rianti Dwi Lestari. Saya hanya seorang manusia yang tampil
+                    sederhana meminang istri saya dengan bismillah atas ridho
+                    Allah SWT. Saya meminta doa restu dari kalian atas
+                    pernikahan saya. Terima kasih.
                   </p>
                 </div>
               </div>
@@ -316,40 +319,83 @@ export default function Home() {
                     <div className="col-md-6 col-sm-6 text-center">
                       <div className="event-wrap animate-box">
                         <h3>Akad Nikah</h3>
-                        <div className="event-col">
+                        <div className="col-sm-4 event-col">
                           <i className="icon-clock"></i>
                           <span>09:00 - 11:00 WIB</span>
                         </div>
-                        <div className="event-col">
+                        <div className="col-sm-4 event-col">
                           <i className="icon-calendar"></i>
                           <span>Kamis, 15 Juli 2021</span>
                         </div>
-                        <p>
-                          Far far away, behind the word mountains, far from the
-                          countries Vokalia and Consonantia, there live the
-                          blind texts. Separated they live in Bookmarksgrove
-                          right at the coast of the Semantics, a large language
-                          ocean.
+                        <div className="col-sm-4 event-col">
+                          <i className="icon-location2"></i>
+                          <span>
+                            <Link
+                              href="https://goo.gl/maps/Toa9NdLdhPCojxE8A"
+                              passHref
+                            >
+                              <a
+                                style={{
+                                  color: "whitesmoke",
+                                }}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                <strong>Masjid Subulussalam </strong>
+                                <i className="icon-arrow-with-circle-up"></i>
+                              </a>
+                            </Link>
+                          </span>
+                        </div>
+                        <p style={{ marginTop: "10%" }}>
+                          Atas doa dan restu kalian, Alhamdulillah acara Akad
+                          Nikah telah diselenggarakan dan berjalan lancar. Tanpa
+                          mengurangi rasa hormat, kami tidak mengundang kalian
+                          karena suasana pandemi saat itu masih tidak begitu
+                          baik, maka acara diselenggarakan dengan orang yang
+                          terbatas sesuai anjuran pemerintah. Mohon dimaklumi
+                          terima kasih.
                         </p>
                       </div>
                     </div>
                     <div className="col-md-6 col-sm-6 text-center">
                       <div className="event-wrap animate-box">
                         <h3>Resepsi</h3>
-                        <div className="event-col">
+                        <div className="col-sm-4 event-col">
                           <i className="icon-clock"></i>
                           <span>13:00 - 20:00 WIB</span>
                         </div>
-                        <div className="event-col">
+                        <div className="col-sm-4 event-col">
                           <i className="icon-calendar"></i>
                           <span>Minggu, 10 Oktober 2021</span>
                         </div>
+                        <div className="col-sm-4 event-col">
+                          <i className="icon-location2"></i>
+                          <span>
+                            <Link
+                              href="https://goo.gl/maps/kaC4hyjZh1h1okG46"
+                              passHref
+                            >
+                              <a
+                                style={{
+                                  color: "whitesmoke",
+                                }}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                <strong>Jl. Ploso IX-A No. 10 </strong>
+                                <i className="icon-arrow-with-circle-up"></i>
+                              </a>
+                            </Link>
+                          </span>
+                        </div>
                         <p>
-                          Far far away, behind the word mountains, far from the
-                          countries Vokalia and Consonantia, there live the
-                          blind texts. Separated they live in Bookmarksgrove
-                          right at the coast of the Semantics, a large language
-                          ocean.
+                          Bismillah, kedepannya kami akan mengadakan acara
+                          resepsi pernikahan kami, tanpa mengurangi rasa hormat
+                          dimohon untuk hadir dengan memakai masker dan hand
+                          sanitizer. Tidak luput juga meminta doa dan restu dari
+                          kalian semua agar acara berjalan dengan normal, terima
+                          kasih.
                         </p>
                       </div>
                     </div>
@@ -367,8 +413,8 @@ export default function Home() {
               <div className="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
                 <h2>Cerita Kami</h2>
                 <p>
-                  Far far away, behind the word mountains, far from the
-                  countries Vokalia and Consonantia, there live the blind texts.
+                  Perjalanan singkat kami mulai saat pertama kali kenal, bertemu
+                  kembali, hingga menjadi pasangan sah.
                 </p>
               </div>
             </div>
@@ -389,11 +435,10 @@ export default function Home() {
                       </div>
                       <div className="timeline-body">
                         <p>
-                          Far far away, behind the word mountains, far from the
-                          countries Vokalia and Consonantia, there live the
-                          blind texts. Separated they live in Bookmarksgrove
-                          right at the coast of the Semantics, a large language
-                          ocean.
+                          Di sekolah SMPN 37 Surabaya, Kami menjadi teman
+                          sekelas, yaitu saat memasuki kelas 9 yang dimana saat
+                          itu tahun ajarannya adalah 2012. Kami tidak begitu
+                          akrab, hanya sekedar kenal saja.
                         </p>
                       </div>
                     </div>
@@ -410,11 +455,13 @@ export default function Home() {
                       </div>
                       <div className="timeline-body">
                         <p>
-                          Far far away, behind the word mountains, far from the
-                          countries Vokalia and Consonantia, there live the
-                          blind texts. Separated they live in Bookmarksgrove
-                          right at the coast of the Semantics, a large language
-                          ocean.
+                          Kami dipertemukan kembali pada tempat kerja yang
+                          bersebelahan, tempat kerja kami hanya beda gedung
+                          saja. Saat itu Afif bertempat kerja di Graha Bumi
+                          Surabaya, sedangkan Rianti bertempat kerja di Hotel
+                          Bumi Surabaya. Kami mulai berkenalan dan saling sapa
+                          lewat sosial media. Disinilah awal kami mulai PDKT dan
+                          berpacaran :).
                         </p>
                       </div>
                     </div>
@@ -431,11 +478,10 @@ export default function Home() {
                       </div>
                       <div className="timeline-body">
                         <p>
-                          Far far away, behind the word mountains, far from the
-                          countries Vokalia and Consonantia, there live the
-                          blind texts. Separated they live in Bookmarksgrove
-                          right at the coast of the Semantics, a large language
-                          ocean.
+                          3 tahun lamanya kami berpacaran dan mulai memutuskan
+                          untuk ke langkah yang lebih jauh lagi. Afif mulai
+                          berniat melamar pasangannya, Rianti dengan bismillah
+                          tawakallah
                         </p>
                       </div>
                     </div>
@@ -452,11 +498,13 @@ export default function Home() {
                       </div>
                       <div className="timeline-body">
                         <p>
-                          Far far away, behind the word mountains, far from the
-                          countries Vokalia and Consonantia, there live the
-                          blind texts. Separated they live in Bookmarksgrove
-                          right at the coast of the Semantics, a large language
-                          ocean.
+                          Alhamdulillah, dengan ridho Allah SWT, Afif melangkah
+                          lebih jauh lagi dengan meminang pasangannya, Rianti
+                          menjadi istri sah. Banyak rintangan yang kami hadapi,
+                          salah satunya kondisi pandemi Covid-19 yang lagi
+                          tinggi saat itu, harus melakukan syarat dan anjuran
+                          pemerintah dengan orang yang terbatas. Akan tetapi,
+                          Alhamdulillah acara berjalan dengan lancar
                         </p>
                       </div>
                     </div>
@@ -602,7 +650,7 @@ export default function Home() {
         <div
           id="fh5co-counter"
           className="fh5co-bg fh5co-counter"
-          style={{ backgroundIimage: "url(/images/img_bg_5.jpg)" }}
+          style={{ backgroundImage: "url(/images/img_bg_5.jpg)" }}
         >
           <div className="overlay"></div>
           <div className="container">
@@ -731,6 +779,17 @@ export default function Home() {
                     <Link href="https://youtu.be/_pR_cW4bDeE" passHref>
                       <a target="_blank" rel="noreferrer">
                         Ungu Feat. Andien - Saat Bahagia | VC Trinity
+                      </a>
+                    </Link>
+                  </small>
+                  <small>
+                    Thanks for Backgrounds{" "}
+                    <Link
+                      href="https://www.freepik.com/photos/background"
+                      passHref
+                    >
+                      <a target="_blank" rel="noreferrer">
+                        Background photo created by jcomp - www.freepik.com
                       </a>
                     </Link>
                   </small>
