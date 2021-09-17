@@ -14,7 +14,6 @@ const useAudio = (url) => {
   const toggle = () => setPlaying(!playing);
 
   useEffect(() => {
-    console.log(playing);
     const toggleMusic = async () =>
       playing ? await audio.play() : await audio.pause();
 
@@ -41,10 +40,14 @@ const useAudio = (url) => {
   return [playing, toggle];
 };
 
-async function submitForm(e, params) {
+async function submitForm(e, params, setName = null) {
   e.preventDefault();
 
   if (params && params.constructor === Object) {
+    if (!Boolean(params.name)) {
+      alert("Harap isi nama");
+      return false;
+    }
     const res = await fetch(`/api/attend`, {
       method: "post",
       headers: {
@@ -53,7 +56,16 @@ async function submitForm(e, params) {
       body: JSON.stringify(params),
     });
 
-    return await res.json();
+    if (res.ok) {
+      setName("");
+      alert("Terima kasih telah mengisi " + params.name || null);
+    }
+
+    if (res.status === 429) {
+      alert("Maaf, kamu sudah mengisi nama");
+    }
+
+    return true;
   }
 }
 
@@ -723,7 +735,7 @@ export default function Home() {
                   name="attendForm"
                   action="/api/attend"
                   method="post"
-                  onSubmit={async (e) => await submitForm(e, { name })}
+                  onSubmit={async (e) => await submitForm(e, { name }, setName)}
                   className="form-inline"
                 >
                   <div className="col-md-6 col-sm-6">

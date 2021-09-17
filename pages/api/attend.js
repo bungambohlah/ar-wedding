@@ -1,21 +1,36 @@
-import fs from "fs";
-import { writeFile, access } from "fs/promises";
 import rateLimit from "../../utils/rate-limit";
 import * as uuid from "uuid";
-import * as config from "../../config/api_config.json";
 import { Low, JSONFile } from "lowdb";
+import { setCookie } from "../../utils/cookies";
+
+const one_year = 1000 * 60 * 60 * 24 * 356; // 1 year
 
 const limiter = rateLimit({
-  interval: 60 * 1000, // 60 seconds
+  interval: one_year,
   uniqueTokenPerInterval: 500, // Max 500 users per second
 });
 
 const attendJsonPath = "./data/attended.json";
-const { CACHE_TOKEN } = config;
 
 export default async function handler(req, res) {
+  const {
+    headers: { cookie },
+  } = req;
+
+  const cookies = ((typeof cookie === "string" && cookie) || "")
+    .split("; ")
+    .reduce((obj, v) => {
+      const [key, val] = v.split("=");
+      obj[key] = val;
+      return obj;
+    }, {});
+  let token = cookies.token || null;
+  if (!token) {
+    token = uuid.v4();
+    await setCookie(res, "token", token, { maxAge: one_year });
+  }
   try {
-    await limiter.check(res, 10, CACHE_TOKEN); // 10 requests per minute
+    await limiter.check(res, 2, token); // 1 requests per 1 year
     if (req.method === "POST" && req.body && req.body.name) {
       // handle submit name attended
       const { name } = req.body;
@@ -33,9 +48,7 @@ export default async function handler(req, res) {
         }
 
         if (Array.isArray(db.data) && db.data.length) {
-          for (let a = 0; a <= 10000; a++) {
-            db.data.push({ id, name });
-          }
+          db.data.push({ id, name });
         } else {
           db.data = [{ id, name }];
         }

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "cookie": "^0.4.1",
     "lowdb": "^2.1.0",
     "lru-cache": "^6.0.0",
     "moment": "^2.29.1",
