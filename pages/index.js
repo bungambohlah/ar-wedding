@@ -250,9 +250,9 @@ export default function Home() {
           <div className="container">
             <div className="row">
               <div className="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-                <h2
-                  style={{ fontSize: "3.5rem!important" }}
-                >{`Assalamu'alaikum`}</h2>
+                <h2 style={{ fontSize: "3.5rem!important" }}>
+                  Assalamu&apos;alaikum
+                </h2>
                 <h3>بِسْمِ اللّهِ الرَّحْمَنِ الرَّحِيْمِ</h3>
                 <h3>Salam sejahtera bagi kita semua</h3>
                 <h3>10 Oktober 2021</h3>
@@ -274,10 +274,10 @@ export default function Home() {
                 <div className="desc-bride">
                   <h3>Rianti Dwi Lestari</h3>
                   <p>
-                    Assalamu'alaikum, perkenalkan nama saya Rianti, panggil saja
-                    Ria. Sah istri dari Afif Abdillah Jusuf, saya meminta doa
-                    dan restu semoga pernikahan saya menjadi cinta yang abadi di
-                    dunia maupun di akhirat, aamiin.
+                    Assalamu&apos;alaikum, perkenalkan nama saya Rianti, panggil
+                    saja Ria. Sah istri dari Afif Abdillah Jusuf, saya meminta
+                    doa dan restu semoga pernikahan saya menjadi cinta yang
+                    abadi di dunia maupun di akhirat, aamiin.
                   </p>
                 </div>
               </div>
