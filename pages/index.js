@@ -128,12 +128,12 @@ export default function Home() {
           name="keywords"
           content="afif, rianti, wedding, nikah, kawin, nikahan, afif abdillah jusuf, rianti dwi lestari, akad, akad nikah, landing page, resepsi, resepsi nikah"
         />
-        <meta name="author" content="afifjusuf.id" />
+        <meta name="author" content="afif.dev" />
 
         {/* Facebook and Twitter integration */}
         <meta property="og:title" content="Wedding - Rianti & Afif" />
         <meta property="og:image" content="" />
-        <meta property="og:url" content="https://afifjusuf.id/wedding" />
+        <meta property="og:url" content="https://wedding.afif.dev/" />
         <meta property="og:site_name" content="Rianti & Afif Wedding Website" />
         <meta
           property="og:description"
@@ -141,7 +141,7 @@ export default function Home() {
         />
         <meta name="twitter:title" content="Wedding - Rianti & Afif" />
         <meta name="twitter:image" content="" />
-        <meta name="twitter:url" content="https://afifjusuf.id/wedding" />
+        <meta name="twitter:url" content="https://wedding.afif.dev/" />
         <meta name="twitter:card" content="" />
       </Head>
       {/* modernizr */}
@@ -773,8 +773,8 @@ export default function Home() {
                 <p>
                   <small className="block">
                     &copy; {new Date().getFullYear()} {""}
-                    <Link href="https://afifjusuf.id" passHref>
-                      <a>afifjusuf.id</a>
+                    <Link href="https://afif.dev" passHref>
+                      <a>afif.dev</a>
                     </Link>
                     . All Rights Reserved.
                   </small>
@@ -839,17 +839,14 @@ export default function Home() {
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      href="https://youtube.com/@afifdev"
-                      passHref
-                    >
+                    <Link href="https://youtube.com/@afifdev" passHref>
                       <a target="_blank" rel="noreferrer">
                         <i className="icon-youtube"></i>
                       </a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://afifjusuf.id" passHref>
+                    <Link href="https://afif.dev" passHref>
                       <a>
                         <i className="icon-globe2"></i>
                       </a>
