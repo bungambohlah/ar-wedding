@@ -840,7 +840,7 @@ export default function Home() {
                   </li>
                   <li>
                     <Link
-                      href="https://youtube.com/channel/UCgXeikUYtBItdbE1_Lw9y1w"
+                      href="https://youtube.com/@afifdev"
                       passHref
                     >
                       <a target="_blank" rel="noreferrer">
