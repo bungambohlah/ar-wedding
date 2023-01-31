@@ -823,7 +823,7 @@ export default function Home() {
                   </li>
                   <li>
                     <Link
-                      href="https://fb.me/rudrafentje.samasamagila"
+                      href="https://fb.me/afifabdillahj"
                       passHref
                     >
                       <a target="_blank" rel="noreferrer">
